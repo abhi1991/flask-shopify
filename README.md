@@ -2,8 +2,8 @@
 Flask-Shopify
 =============
 
-Flask-Shopify is an extension to *Flask* that adds an interface to the
-Python Shopify API (*python-shopify*).
+Flask-Shopify is an extension to ``Flask`` that adds an interface to the
+Python Shopify API (``python-shopify``).
 
 Thanks to Erik Karulf for doing most of the work on ``python-shopify``
 
@@ -24,8 +24,8 @@ shopify).
 Note that Flask-Shopify requires ``python-shopify`` as well as
 ``pyactiveresource``.
 
-* http://github.com/lateshowlabs/python-shopify
-* http://github.com/ekarulf/pyactiveresource
+`` http://github.com/lateshowlabs/python-shopify
+`` http://github.com/ekarulf/pyactiveresource
 
 Configuration
 =============
@@ -40,7 +40,7 @@ object after configuring the application:
     app.config.from_object('settings')
     shopify = Shopify(app)
 
-Flask-Shopify requires the following Flask App settings:
+``Flask-Shopify`` requires the following Flask App settings:
 
     SHOPIFY_SHARED_SECRET   = Your app's shared secret key with Shopify.
     SHOPIFY_API_KEY         = Your app's API key.
@@ -50,16 +50,16 @@ You can get these settings when you create a new app as a Shopify Partner:
 http://www.shopify.com/partners/apps
 
 If you want to develop your app locally, you can test it by setting
-*DEBUG = True*, and by using the following test settings:
+``DEBUG = True``, and by using the following test settings:
 
     SHOPIFY_TEST_SITE       = Test shop URL.
-    SHOPIFY_TEST_API_KEY   = Test shop private app API key.
-    SHOPIFY_TEST_PASSWORD  = Test shop private app password.
+    SHOPIFY_TEST_API_KEY    = Test shop private app API key.
+    SHOPIFY_TEST_PASSWORD   = Test shop private app password.
 
 
 You must define a redirect URL for Shopify to send the user to once
 they have installed our app. For example, if you define it as
-<*SHOPIFY_APP_SITE*>/welcome, you can authenticate the shop with the
+<``SHOPIFY_APP_SITE``>/welcome, you can authenticate the shop with the
 following example:
 
     @app.route('/welcome')
@@ -90,12 +90,12 @@ following example:
             flash('You are now logged in')
             return redirect(url_for('index'))
 
-You need to provide a *tokengetter* function so that the Shopify
+You need to provide a ``tokengetter`` function so that the Shopify
 object can create a session. This function must return a token tuple
 in the form of (<url>, <password>) for a shop that has the app
 installed and has been authenticated.
 
-An example of the *tokengetter* is as follows:
+An example of the ``tokengetter`` is as follows:
 
     @shopify.tokengetter
     def get_shopify_token():
@@ -104,7 +104,7 @@ An example of the *tokengetter* is as follows:
         else:
             return None
 
-There is also a view decorator provided *shopify_login_required* which
+There is also a view decorator provided ``shopify_login_required`` which
 requires the Shopify session:
 
     @shopify_login_required
