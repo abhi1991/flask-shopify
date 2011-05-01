@@ -24,8 +24,8 @@ shopify).
 Note that Flask-Shopify requires ``python-shopify`` as well as
 ``pyactiveresource``.
 
-`` http://github.com/lateshowlabs/python-shopify
-`` http://github.com/ekarulf/pyactiveresource
+* http://github.com/lateshowlabs/python-shopify
+* http://github.com/ekarulf/pyactiveresource
 
 Configuration
 =============
@@ -59,7 +59,7 @@ If you want to develop your app locally, you can test it by setting
 
 You must define a redirect URL for Shopify to send the user to once
 they have installed our app. For example, if you define it as
-<``SHOPIFY_APP_SITE``>/welcome, you can authenticate the shop with the
+``SHOPIFY_APP_SITE/welcome``, you can authenticate the shop with the
 following example:
 
     @app.route('/welcome')
@@ -92,7 +92,7 @@ following example:
 
 You need to provide a ``tokengetter`` function so that the Shopify
 object can create a session. This function must return a token tuple
-in the form of (<url>, <password>) for a shop that has the app
+in the form of ``(url, password>`` for a shop that has the app
 installed and has been authenticated.
 
 An example of the ``tokengetter`` is as follows:
